@@ -1,0 +1,18 @@
+a{
+  >span{
+    display: inline-block;
+    color: var(--color-primary-text);
+    text-decoration: underline;
+
+    transition: transform 0.2s;
+  }
+
+  transition: opacity 0.2s;
+  &:hover{
+    opacity: 0.75;
+
+    >span{
+      transform: scale(1.2);
+    }
+  }
+}

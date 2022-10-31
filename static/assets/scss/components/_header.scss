@@ -1,0 +1,49 @@
+.header {
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template:
+    "a a"
+    "b c";
+  row-gap: 1em;
+
+  width: 100%;
+
+  padding: 1em;
+
+  top: -8em;
+  position: sticky;
+
+  background-color: var(--color-bg-primary);
+
+  &__title {
+    font-size: 5em;
+    font-weight: 700;
+
+    grid-area: a;
+  }
+
+  >nav {
+    grid-area: b;
+
+    >ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1em;
+    }
+  }
+
+  &__menu {
+    grid-area: c;
+
+    >ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1em;
+    }
+  }
+}

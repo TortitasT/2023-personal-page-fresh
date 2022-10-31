@@ -1,0 +1,26 @@
+@import "./variables";
+@import "./fonts";
+@import "./a";
+@import "./p";
+@import "./components/_header";
+
+body{
+  background-color: var(--color-bg-primary);
+  color: var(--color-fg-primary);
+
+  >main{
+    padding: 1em;
+
+    box-sizing: border-box;
+
+    min-height: 100vh;
+  }
+}
+
+ul{
+  padding-left: 0;
+
+  >li{
+    list-style: none;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "sass": "denosass compile ./static/assets/scss/ --out ./static/assets/css/",
+    "start": "deno run -A --watch=static/other,static/assets/scss,routes/ dev.ts"
+  },
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
+}
