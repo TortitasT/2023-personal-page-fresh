@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Header(props: { page: number }) {
   return (
     <header class="header">
       <div class="header__title">
@@ -8,12 +8,12 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <a href="/">
+            <a href="/" class={props.page === 0 ? "active" : ""}>
               <span>Home</span>
             </a>
           </li>
           <li>
-            <a href="/about">
+            <a href="/about" class={props.page === 1 ? "active" : ""}>
               <span>About</span>
             </a>
           </li>

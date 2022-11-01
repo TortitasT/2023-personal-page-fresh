@@ -12,7 +12,11 @@ a{
     opacity: 0.75;
 
     >span{
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
+  }
+
+  &.active{
+    opacity: 0.5;
   }
 }
