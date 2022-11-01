@@ -2,7 +2,27 @@ import { Fragment } from "preact";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
 import { Head } from "$fresh/runtime.ts";
-import { LoginPanel } from "../components/LoginPanel.tsx";
+import { authMiddleware } from "../middlewares/auth.ts";
+import { Handlers } from "$fresh/server.ts";
+import LoginPanel from "../islands/LoginPanel.tsx";
+
+export const handler: Handlers = {
+  async GET(req, ctx) {
+    const auth = await authMiddleware(req);
+    if (auth) {
+      const headers = new Headers({
+        location: new URL(req.url).origin,
+      });
+      return new Response("Already logged in", {
+        status: 302,
+        headers,
+      });
+    }
+
+    const resp = await ctx.render();
+    return resp;
+  },
+};
 
 export default function IndexPage() {
   return (
@@ -16,7 +36,6 @@ export default function IndexPage() {
 
       <main>
         <h1>Login</h1>
-
         <LoginPanel />
       </main>
 

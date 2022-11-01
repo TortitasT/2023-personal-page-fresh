@@ -2,8 +2,10 @@
 @import "./fonts";
 @import "./a";
 @import "./p";
+@import "./form";
 @import "./components/_header";
 @import "./components/_footer";
+@import "./components/_loginPanel";
 
 body{
   background-color: var(--color-bg-primary);

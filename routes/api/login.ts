@@ -37,7 +37,7 @@ export const handler: Handlers = {
         return new Response("Incorrect password", { status: 401 });
       }
 
-      user.extra.token = Math.random().toString(36).substr(2, 9);
+      user.extra.auth = Math.random().toString(36).substr(2, 9);
 
       await setDatabase(db);
 
@@ -46,8 +46,8 @@ export const handler: Handlers = {
       });
 
       setCookie(response.headers, {
-        name: "token",
-        value: user.extra.token,
+        name: "auth",
+        value: user.extra.auth,
         maxAge: 60 * 60 * 24 * 7,
         path: "/",
       });
