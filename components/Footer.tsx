@@ -51,7 +51,8 @@ export default function Footer() {
       <ul>
         <li>
           <p>
-            @tortitast 2023
+            @tortitast <br />
+            2022 - 2023
           </p>
         </li>
       </ul>
